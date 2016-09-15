@@ -3,12 +3,15 @@
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" media="screen" title="no title" charset="utf-8">
-  <link rel="stylesheet" href="assets/bootswatch-cyborg.min.css" media="screen" title="no title" charset="utf-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link rel="stylesheet" href="assets/animate.css" media="screen" title="no title" charset="utf-8">
+  <link rel="stylesheet" href="assets/bootswatch-cyborg.min.css" media="screen" title="no title" charset="utf-8">
   <link rel="stylesheet" href="style.css" media="screen" title="no title" charset="utf-8">
 
+  <!-- Latest compiled and minified JavaScript -->
+
   <script src="assets/jquery.min.js" charset="utf-8"></script>
-  <script src="assets/bootstrap.min.js" charset="utf-8"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <script src="main.js" charset="utf-8"></script>
   <title>
     Contact List
@@ -60,7 +63,7 @@
         </div>
       </div>
 
-      <form action="contact-form" class="new-contact form-inline text-center row ">
+      <!-- <form action="contact-form" class="new-contact form-inline text-center row ">
         <div class="form-group col-xs-10 col-xs-offset-1">
           <input type="text" class="new-contact form-control"  placeholder="Name">
           <input type="text" class="new-contact-number form-control" placeholder="Number">
@@ -68,7 +71,10 @@
           <input type="text" class="new-contact-image form-control" placeholder="Image Url">
           <button type='submit' class="create-contact btn btn-success"><samp>Add</samp></button>
         </div>
-      </form>
+      </form> -->
+      <div class="text-center">
+        <button type='button' class="add-contact btn btn-success"> <samp>Add New Contact</samp></button>
+      </div>
       <br>
       <div class="row col-xs-12">
         <div class="all-contacts panel panel-default row">
@@ -115,7 +121,7 @@
           <!-- Template -->
 
           <!-- Modal Template -->
-          <div id="addContactModal" class="modal fade template" tabindex="-1" data-id="" data-toggle="modal" aria-labelledby="addContactModalLabel" aria-hidden="true">
+          <div id="add-contact-modal" class="modal fade" tabindex="-1" aria-labelledby="addContactModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
               <div class="modal-content" >
                 <div class="modal-header">
@@ -125,32 +131,32 @@
                   <h4 class="modal-title" id="contactForm">Add Contact</h4>
                 </div>
                 <div class="modal-body">
-                  <form class="submit-form">
+                  <div class="submit-form">
                     <div class="form-group">
                       <label>Name</label>
-                      <input type="text" class="form-control newName" name="name" placeholder="First Last">
+                      <input type="text" class="form-control new-contact" name="name" placeholder="First Last">
                     </div>
                     <div class="form-group">
                       <label>Phone Number</label>
-                      <input type="tel" class="form-control newNumber" name="phone" placeholder="(XXX)-XXX-XXXX">
+                      <input type="tel" class="form-control new-contact-number" name="phone" placeholder="(XXX)-XXX-XXXX">
                     </div>
                     <div class="form-group">
                       <fieldset>
                         <label>Address</label>
-                        <input type="text" id="address-zip" class="form-control new-address-zip" name="zip" placeholder="Mailing Address">
+                        <input type="text" id="address-zip" class="form-control new-contact-address" name="zip" placeholder="Mailing Address">
                       </fieldset>
                     </div>
 
                     <div class="form-group">
                       <label>Image URL</label>
                       <br>
-                      <input type="text" name="image" class="form-control newImage" id="exampleInputFile" placeholder="Link .jpg .png .bmp">
+                      <input type="text" name="image" class="form-control new-contact-image" id="exampleInputFile" placeholder="Link .jpg .png .bmp">
                     </div>
-                  </form>
+                  </div>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="pull-left btn btn-danger" data-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary submit-contact" data-dismiss="modal">Submit</button>
+                  <button type="button" class="pull-left btn btn-danger close-modal" >Close</button>
+                  <button type="button" class="btn btn-primary submit-contact">Submit</button>
                 </div>
               </div>
             </div>

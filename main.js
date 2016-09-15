@@ -1,15 +1,16 @@
 'use strict';
 
 $(() => {
-  $('.create-contact').on('click', createContact)
   $('.all-contacts').on('click', '.edit-btn', watchEdit)
   $('.all-contacts').on('click', '.delete-btn', deleteContact)
+  $('.add-contact').on('click', addContact)
+  $('.close-modal').on('click', closeModal)
+  $('.submit-contact').on('click', submitContact)
 })
 
 let contacts = []
-
-let createContact = (e) => {
-  e.preventDefault()
+let addContact = () => $('.modal').modal('toggle')
+let submitContact = () => {
   let newName = $('input.new-contact').val()
   let newNumber = $('input.new-contact-number').val()
   let newAddress = $('input.new-contact-address').val()
@@ -30,7 +31,15 @@ let createContact = (e) => {
     image: newImage
   }
   contacts.unshift(newContact)
+  closeModal()
   renderContacts()
+}
+let closeModal = () => {
+  $('input.new-contact').val('')
+  $('input.new-contact-number').val('')
+  $('input.new-contact-address').val('')
+  $('input.new-contact-image').val('')
+  $('.modal').modal('toggle')
 }
 
 let deleteContact = (e) => {
